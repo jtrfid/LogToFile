@@ -1,0 +1,21 @@
+设置本工程为库：
+project.properties文件添加：
+android.library=true
+
+作为库使用，一定不要在注册文件中设置可以登录的Activity,否则在应用程序中，会显示之。
+
+
+其它工程要使用本日志类，修改其project.properties：
+project.properties文件添加：（可以通过选取欲引用的工程目录，右键点击properties设置）
+#引入LogToFile库
+android.library.reference.1=../LogToFile
+  
+通过下列两种方式之一设置欲引用工程的读写SD卡和读取log的权限
+（1） 
+ # 在欲引用工程project.properties文件添加下列一行，使本工程权限合并至欲引用工程的AndroidManifest.xml文件，使用SD卡和读取log权限
+ manifestmerger.enabled=true
+ 
+（2）
+ 在欲引用工程的AndroidManifest.xml文件，添加使用SD卡和读取log权限  
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />  
+<uses-permission android:name="android.permission.READ_LOGS" />  
