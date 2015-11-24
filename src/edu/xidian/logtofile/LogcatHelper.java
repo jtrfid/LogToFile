@@ -9,6 +9,7 @@ import android.os.Environment;
 import android.util.Log;
 
 /**
+ * <pre>
  * 保存日志至sd卡,dir="",logFname则在SD卡根目录
  * (1) 获取唯一实例：LogcatHelper loghelper = LogcatHelper.getInstance(Context context,String dir,String logFname)
  * (2) 开始记录日志：loghelper.start(format)
@@ -37,6 +38,7 @@ import android.util.Log;
  *   • F — Fatal
  *   • S — Silent (highest priority, on which nothing is ever printed)
  * lennovo手机中写入的文件在adb或ddms中可见，用手机中的文件管家可见，win7中的不可见
+ * </pre>
  */
 public class LogcatHelper {
     static final String TAG = "LogcatHelper";
